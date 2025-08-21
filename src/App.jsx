@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 
 function App() {
   //React Hooks : useState / useEffect
@@ -20,6 +20,30 @@ function App() {
       <br />
       {counter}
     </div>
+  );
+}
+
+export default App;
+*/ import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Login from "./components/Auth/Login";
+import "./App.css";
+import Products from "./products/products";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<Navigate to="/login" />} />
+      </Routes>
+    </Router>
   );
 }
 
